@@ -1,0 +1,3 @@
+Contact: security@earntime.app
+Preferred-Languages: en
+Policy: https://earntime.app/security-policy

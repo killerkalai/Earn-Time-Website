@@ -1,0 +1,10 @@
+{
+  "name": "Earn Time",
+  "short_name": "EarnTime",
+  "description": "Earn screen time through real tasks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": []
+}

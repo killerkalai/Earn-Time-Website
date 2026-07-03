@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ─── Fonts: Match the Flutter app (Nunito + Bebas Neue) ─── */
+
+:root {
+  /* ─── Exact colors from the Flutter app (lib/core/theme/app_theme.dart) ─── */
+  --bg-surface: #08080F;        /* surfaceDark */
+  --bg-card: #12121C;           /* cardDark */
+  --bg-card-2: #1A1A2E;         /* cardDark2 */
+  --text-primary: #FFFFFFFF;    /* textPrimary */
+  --text-secondary: #66FFFFFF;  /* textSecondary (40% opacity) */
+
+  /* Primary accent - THE BRAND COLOR */
+  --accent: #A8FF3E;            /* accentDefault / success */
+  --accent-dim: rgba(168, 255, 62, 0.15);
+  --accent-glow: rgba(168, 255, 62, 0.35);
+
+  /* Category colors from app_theme.dart colorForCategory() */
+  --cat-study: #3EA8FF;         /* Study */
+  --cat-fitness: #A8FF3E;       /* Fitness */
+  --cat-health: #4ADE80;        /* Health */
+  --cat-mindset: #C084FC;       /* Mindset */
+  --cat-creativity: #FB923C;    /* Creativity */
+  --cat-work: #FBBF24;          /* Work */
+  --cat-social: #F472B6;        /* Social */
+  --cat-finance: #34D399;       /* Finance */
+  --cat-habit: #94A3B8;         /* Habit */
+
+  /* Difficulty mode colors (matching app modes) */
+  --mode-easy: #A8FF3E;         /* Green - Easy */
+  --mode-medium: #3EA8FF;       /* Blue - Medium (Study) */
+  --mode-hell: #FB923C;         /* Orange - Hell (Creativity) */
+
+  /* Status colors */
+  --success: #A8FF3E;
+  --warning: #FBBF24;
+  --error: #FF4E3A;
+
+  /* Glass morphism */
+  --glass-bg: rgba(18, 18, 28, 0.7);      /* cardDark with opacity */
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-hover: rgba(255, 255, 255, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--bg-surface);
+  --color-foreground: var(--text-primary);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-card: var(--bg-card);
+  --color-card-2: var(--bg-card-2);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Nunito", system-ui, sans-serif;
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Display font utility (for headings like the app) */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+/* ─── Glass Morphism ─── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass:hover {
+  border-color: var(--glass-border-hover);
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--cat-study));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-easy {
+  background: linear-gradient(135deg, var(--mode-easy), var(--cat-health));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-medium {
+  background: linear-gradient(135deg, var(--mode-medium), var(--cat-study));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-hell {
+  background: linear-gradient(135deg, var(--mode-hell), var(--cat-creativity));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Utilities ─── */
+.glow-accent {
+  box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-dim);
+}
+
+.glow-easy {
+  box-shadow: 0 0 40px rgba(168, 255, 62, 0.3), 0 0 80px rgba(168, 255, 62, 0.1);
+}
+
+.glow-medium {
+  box-shadow: 0 0 40px rgba(62, 168, 255, 0.3), 0 0 80px rgba(62, 168, 255, 0.1);
+}
+
+.glow-hell {
+  box-shadow: 0 0 40px rgba(251, 146, 60, 0.3), 0 0 80px rgba(251, 146, 60, 0.1);
+}
+
+/* ─── Background Patterns ─── */
+.bg-grid-pattern {
+  background-size: 60px 60px;
+  background-image:
+    linear-gradient(to right, rgba(168, 255, 62, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 255, 62, 0.03) 1px, transparent 1px);
+}
+
+.bg-radial-accent {
+  background: radial-gradient(ellipse at center, var(--accent-dim) 0%, transparent 70%);
+}
+
+/* ─── Scanner Animation ─── */
+@keyframes scan {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+.animate-scan {
+  animation: scan 2.5s infinite linear;
+}
+
+/* ─── Pulse Animation for Accent ─── */
+@keyframes pulse-accent {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 50px var(--accent-glow), 0 0 100px var(--accent-dim); }
+}
+
+.animate-pulse-accent {
+  animation: pulse-accent 3s ease-in-out infinite;
+}
+
+/* ─── Spotlight Mouse Tracker ─── */
+.spotlight-card {
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(168, 255, 62, 0.08),
+    transparent 50%
+  );
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card-2);
+  border-radius: 4px;
+  border: 2px solid var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Focus Visible ─── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--accent-dim);
+  color: var(--text-primary);
+}
