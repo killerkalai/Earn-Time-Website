@@ -59,8 +59,8 @@ export function DifficultyModes() {
       icon: Flame,
       features: [
         "Atomic Stakes (Single-transaction balance deduction)",
-        "Versus Duels (Challenge friends to habit races)",
-        "50% cash payout bonus on winning stakes",
+        "Versus Duels (AI study quizzes & fitness challenges)",
+        "Partner Collusion Detection (Anti-cheat trust scores)",
         "Strict anti-bypass app blocking (un-bypassable locks)"
       ]
     }

@@ -97,9 +97,21 @@ const features = [
   },
   {
     icon: FlaskConical,
-    title: "213 Automated Tests",
-    description: "Battle-tested with 213 unit tests covering services, providers, models, and utilities. Zero-error compilation with comprehensive mock infrastructure.",
+    title: "222 Automated Tests",
+    description: "Battle-tested with 222 unit tests covering services, providers, models, and utilities. Zero-error compilation with comprehensive mock infrastructure.",
     color: "text-[#8B5CF6] bg-[#8B5CF6]/10",
+  },
+  {
+    icon: Brain,
+    title: "Study Quiz Arena",
+    description: "Challenge your partner to head-to-head Study Duels. Input any topic, let AI generate custom multiple-choice questions, and test each other's knowledge securely.",
+    color: "text-[#F43F5E] bg-[#F43F5E]/10",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Anti-Collusion Trust Engine",
+    description: "Detects and penalizes collusion. Approving flagged faked proofs results in Reliability Trust Score deductions and automatic suspension.",
+    color: "text-[#EF4444] bg-[#EF4444]/10",
   },
   {
     icon: Gauge,
