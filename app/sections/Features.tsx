@@ -17,12 +17,37 @@ import {
   Medal,
   BarChart3,
   Accessibility,
-  FlaskConical,
-  Gauge,
-  RefreshCw,
+  Phone,
+  Wallet,
+  ShieldCheck,
+  Lock,
 } from "lucide-react";
 
 const features = [
+  {
+    icon: Phone,
+    title: "3 Call Task Verification Options",
+    description: "Verify phone call tasks seamlessly via Auto Call Duration Tracker (no video required), AI Call Log Screenshot Verification, or Partner One-Tap Approval.",
+    color: "text-[#38BDF8] bg-[#38BDF8]/10",
+  },
+  {
+    icon: Wallet,
+    title: "Solana USDC Crypto Payouts",
+    description: "Withdraw your Hell Mode winnings & rewards directly to your Solana Wallet address in USDC with 1% platform fee transparency.",
+    color: "text-[#10B981] bg-[#10B981]/10",
+  },
+  {
+    icon: ShieldCheck,
+    title: "AI Anti-Cheat Pre-Gate",
+    description: "AI vision pre-filters fake or dark screen proofs instantly. Invalid proofs are rejected immediately before reaching partners.",
+    color: "text-[#F43F5E] bg-[#F43F5E]/10",
+  },
+  {
+    icon: Lock,
+    title: "Instant Anti-Uninstall Protection",
+    description: "Blocks unauthorized app uninstallation or force-stopping across all Android phone brands (Samsung, Xiaomi, Vivo, Oppo, Pixel) instantly.",
+    color: "text-[#A855F7] bg-[#A855F7]/10",
+  },
   {
     icon: Camera,
     title: "AI Proof Verification",
